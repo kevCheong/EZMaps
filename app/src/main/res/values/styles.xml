@@ -1,0 +1,99 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorAccent</item>
+        <item name="actionButtonStyle">@style/AppTheme.Widget.ActionButton</item>
+    </style>
+
+    <style name="MyButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@color/grey</item>
+        <item name="colorButtonNormal">@color/colorForeground</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="AcceptButton">
+        <item name="colorControlHighlight">@color/darkBlue</item>
+        <item name="colorButtonNormal">@color/colorSearchButton</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/colorForeground</item>
+    </style>
+
+    <style name="AnotherButton">
+        <item name="colorControlHighlight">@color/darkGreen</item>
+        <item name="colorButtonNormal">@color/lightGreen</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/colorForeground</item>
+    </style>
+
+    <style name="CardButton">
+        <item name="colorControlHighlight">@color/tblack</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/colorForeground</item>
+    </style>
+
+    <style name="CancelButton">
+        <item name="colorControlHighlight">@color/grey</item>
+        <item name="colorButtonNormal">@color/colorForeground</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/colorRed</item>
+    </style>
+
+    <style name="FrontButton">
+        <item name="colorControlHighlight">@color/textBlue</item>
+        <item name="colorButtonNormal">@color/colorForeground</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="MyToolbarTheme" parent="@style/ThemeOverlay.AppCompat.Dark">
+        <item name="colorControlNormal">@color/colorForeground</item>
+        <item name="titleTextColor">@color/colorForeground</item>
+    </style>
+
+    <style name="dividerBase">
+        <item name="android:background">@color/colorBackground</item>
+    </style>
+
+    <style name="dividerHorizontal" parent="dividerBase">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        // You can change thickness here.
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.PopMe">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+
+    </style>
+
+
+    <style name="AppTheme.Widget.ActionButton" parent="@style/Widget.AppCompat.ActionButton">
+        <item name="textAllCaps">false</item>
+        <item name="android:textColor">@color/textBlue</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="menu_labels_style">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">@color/colorForeground</item>
+    </style>
+
+
+</resources>

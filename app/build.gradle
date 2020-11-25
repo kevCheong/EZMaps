@@ -1,0 +1,121 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.moonstone.ezmaps_app"
+        minSdkVersion 24
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+        }
+    }
+    allprojects {
+        repositories {
+            google()
+            jcenter()
+            mavenCentral()
+            maven {
+                url "https://maven.google.com"
+            }
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            java.srcDirs = ['src/main/java', 'src/main/java/startup', 'src/main/java/com.moonstone.ezmaps_app/startup', 'src/main/java/com/moonstone/ezmaps_app/startup', 'src/main/java/com/moonstone/ezmaps_app/contacts', 'src/main/java/com/moonstone/ezmaps_app/profile', 'src/main/java/com/moonstone/ezmaps_app/ezmap', 'src/main/java/com/moonstone/ezmaps_app/add_contacts', 'src/main/java/com/moonstone/ezmaps_app/chat']
+        }
+    }
+}
+repositories {
+//    google()
+    jcenter()
+    mavenCentral()
+    maven {
+        url "https://maven.google.com"
+    }
+}
+
+dependencies {
+
+    // Google
+    implementation 'com.google.android.gms:play-services-location:15.0.1'
+    implementation 'com.google.android.gms:play-services-places:15.0.1'
+//    implementation 'com.google.android.gms:play-services:15.0.1'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0-rc01'
+    implementation 'com.android.support:support-v4:28.0.0-rc01'
+    implementation 'com.android.support:design:28.0.0-rc01'
+
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    // Unit Testing (mock obj)
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:1.10.19'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+
+    implementation 'com.android.support:multidex:1.0.0'
+
+    // Android layout
+    implementation 'com.android.support:cardview-v7:28.0.0-alpha3'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    // Butterknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    //CircleImageView
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+    // Firebase
+    implementation 'com.google.firebase:firebase-messaging:17.3.0'
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-auth:16.0.1'
+    implementation 'com.google.firebase:firebase-storage:16.0.1'
+    implementation 'com.google.firebase:firebase-firestore:17.1.0'
+    implementation 'com.google.firebase:firebase-database:16.0.1'
+    implementation 'com.firebase:firebase-jobdispatcher:0.8.5'
+    implementation 'com.firebaseui:firebase-ui-database:3.3.1'
+    implementation 'com.firebaseui:firebase-ui-storage:4.1.0'
+
+    // Bottom Sheet
+    implementation 'com.flipboard:bottomsheet-core:1.5.3'
+    implementation 'com.flipboard:bottomsheet-commons:1.5.3' // optional
+
+    // Loading Images
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.github.bumptech.glide:glide:4.4.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.4.0'
+    implementation 'com.github.stfalcon:frescoimageviewer:0.5.0'
+
+    // dexter runtime permissions
+    implementation 'com.karumi:dexter:5.0.0'
+
+    //Google Vision for QR
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.google.android.gms:play-services-vision:15.0.1'
+
+    //Pulse library
+    implementation 'pl.bclogic:pulsator4droid:1.0.3'
+
+    // FAB
+    implementation 'com.getbase:floatingactionbutton:1.10.1'
+
+}
+
+apply plugin: 'com.google.gms.google-services'

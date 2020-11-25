@@ -1,0 +1,195 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ezprofile.EditProfileActivity"
+    android:background="@color/colorBackground"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorForeground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:title=""
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:navigationContentDescription="Navigation button description"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorForeground"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@color/colorForeground"
+                android:id="@+id/profile"
+                android:gravity="center_vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/editProfilePic"
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    app:civ_border_width="3dp"
+                    app:civ_border_color="@color/colorAccent"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/editImage"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Edit Image"
+                    android:clickable="true"
+                    android:textSize="16dp"
+                    android:textColor="@color/textBlue"
+                    android:layout_marginLeft="18dp"
+                    android:layout_toRightOf="@+id/editProfilePic"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBackground"
+                android:layout_below="@+id/profile"
+                android:id="@+id/nameLayout"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="14dp">
+
+                <EditText
+                    android:id="@+id/editName"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginVertical="10dp"
+                    android:text="Rebecca Caesar Salad"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:inputType="text"
+                    android:background="@android:color/transparent"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorForeground"
+                android:layout_below="@+id/nameLayout"
+                android:id="@+id/emailLayout"
+                android:orientation="vertical"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="18dp">
+
+                <TextView
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Email"/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/editEmailLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    app:errorEnabled="true">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/editEmail"
+
+                        android:text="Rebecca@email.com"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:inputType="text"
+                        android:background="@android:color/transparent"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorForeground"
+                android:layout_below="@+id/emailLayout"
+                android:id="@+id/passwordLayout"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Password"/>
+
+                <EditText
+                    android:id="@+id/editPassword"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginVertical="10dp"
+                    android:text="********"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:inputType="text"
+                    android:background="@android:color/transparent"/>
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:progressBarStyle"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBackground"
+                android:layout_below="@+id/passwordLayout"
+                android:id="@+id/signOutLayout"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/signOutButton"
+                    android:background="@color/colorForeground"
+                    android:textColor="@color/colorRed"
+                    android:layout_marginVertical="10dp"
+                    android:text="Sign Out"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+
+    </ScrollView>
+</LinearLayout>
+
+
+
+
+
+

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorForeground"
+    tools:context=".ezdirection.EZDirectionActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorForeground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:title=""
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="?android:attr/homeAsUpIndicator"
+        app:navigationContentDescription="Navigation button description"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:progressBarStyle"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- When things are not found -->
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:id="@+id/notFoundImg"
+        android:src="@drawable/not_found_img"
+        android:visibility="gone"
+        android:layout_gravity="center_vertical"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/notFoundText"
+        android:layout_below="@+id/notFoundImg"
+        android:textSize="18sp"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:text="Oops... No results found."/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/notFoundText"
+        android:id="@+id/notFoundSubtext"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:textSize="14sp"
+        android:visibility="gone"
+        android:textStyle="normal"
+        android:text="Please return to the main menu and try again."/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/my_toolbar"
+        android:orientation= "horizontal"
+        android:id = "@+id/recyclerView"/>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="4dp"
+        android:layout_marginBottom="26dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/refreshButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@android:color/transparent"
+                android:textColor="@color/lightGreen"
+                android:text="Refresh"/>
+
+            <Button
+                android:id="@+id/contactsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@android:color/transparent"
+                android:textColor="@color/textBlue"
+                android:text="Contacts"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:includeFontPadding="false"
+        android:minWidth="0dp"
+        android:background="?android:selectableItemBackground"
+        android:visibility="visible"
+        android:src="@drawable/left_arrow"
+        android:layout_alignParentStart="true"
+        android:theme="@style/CardButton"
+        android:id="@+id/leftButton"/>
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/right_arrow"
+        android:visibility="visible"
+        android:background="?android:selectableItemBackground"
+        android:layout_alignParentEnd="true"
+        android:theme="@style/CardButton"
+        android:id="@+id/rightButton"/>
+
+
+
+</RelativeLayout>

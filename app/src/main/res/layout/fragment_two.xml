@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorForeground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/topLayout"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/t2_bg"
+            android:scaleType="fitXY"
+            android:id="@+id/image">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/rusted_orlando_sans"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:text="Search a Place"
+                android:textSize="45sp"
+                android:textColor="@color/colorForeground"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/searchBarLayout"
+                android:weightSum="2"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/search_shape">
+
+                <AutoCompleteTextView
+                    android:id="@+id/searchBar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:hint="Search Address"
+                    android:inputType="text"
+                    android:paddingStart="10dp"
+                    android:layout_weight="2"
+                    android:background="@android:color/transparent"/>
+
+                <ImageButton
+                    android:id="@+id/clearButton"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:visibility="gone"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/circle_shape"
+                    android:src="@drawable/clear"/>
+
+                <LinearLayout
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/search_button_shape"
+                    android:id="@+id/searchButtonLayout">
+                    <ImageButton
+                        android:id="@+id/searchButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/search_button"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionMode.Subtitle.Inverse" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/favouriteLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/topLayout">
+
+        <TextView
+            android:id="@+id/bottomTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            android:text="Favourites"/>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/favRecyclerView"
+            android:layout_below="@id/bottomTitle"
+            android:background="@color/colorForeground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+</RelativeLayout>
+</ScrollView>
+
+
+
+
+
